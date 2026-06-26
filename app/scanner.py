@@ -1,6 +1,7 @@
 import asyncio
 
 from telethon import TelegramClient, events
+from telethon.sessions import StringSession
 
 from app.config import config
 from app.repositories.group_repository import group_repository
@@ -12,10 +13,10 @@ class Scanner:
     def __init__(self):
 
         self.client = TelegramClient(
-            "session",
-            config.API_ID,
-            config.API_HASH,
-        )
+    StringSession(config.SESSION_STRING),
+    config.API_ID,
+    config.API_HASH,
+)
 
         self.groups = group_repository.get_all()
 

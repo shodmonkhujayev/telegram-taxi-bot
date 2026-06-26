@@ -15,6 +15,8 @@ class Config:
 
     OWNER_ID: int = int(os.getenv("OWNER_ID", "0"))
 
+    SESSION_STRING: str = os.getenv("SESSION_STRING", "")
+
     SCAN_LIMIT: int = 10
     SCAN_TIMEOUT: int = 3600
 
